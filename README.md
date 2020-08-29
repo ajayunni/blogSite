@@ -5,7 +5,9 @@ This is a sample blog based on Laravel 5.6 framework and Bootstrap 4 for me lear
   - Login and register.
   - Personal Dashboard page.
   - Like and Comment on posts.
-  - Option to post a cover picture for posts.
+  - Option to post a cover picture for posts.'
+  - View users who liked the posts.
+  - option for nested comments.(replies to reply).
   - Dedicated Post page which lists all the posts from all the users ordered from latest.
 
 
@@ -25,5 +27,7 @@ And of course blog project itself is open source with a public repository on Git
 ### Post Area
 
 ![Post Area](/screenshots/post_page.png)
+
+![Post Area](/screenshots/post_page2.png)
 
 Will be regularly updated!
