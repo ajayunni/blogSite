@@ -14,15 +14,16 @@ This blog project uses some open source projects and free projects to work prope
 * Laravel 5.6.5 - Framework for Web Artisans
 * XAMPP
 * MySQL backend.
+
 And of course blog project itself is open source with a public repository on GitHub.
 
 # Screenshots
 ### Home Page
 
-![Home Page]()
+![Home Page](/screenshots/home_page.png)
 
 ### Admin Area
 
-![Admin Area]()
+![Post Area](/screenshots/post_page.png)
 
 Will be regularly updated!
