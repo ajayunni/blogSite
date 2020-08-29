@@ -22,7 +22,7 @@ And of course blog project itself is open source with a public repository on Git
 
 ![Home Page](/screenshots/home_page.png)
 
-### Admin Area
+### Post Area
 
 ![Post Area](/screenshots/post_page.png)
 
