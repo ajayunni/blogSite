@@ -6,7 +6,8 @@ This is a sample blog based on Laravel 5.6 framework and Bootstrap 4 for me lear
   - Personal Dashboard page.
   - Like and Comment on posts.
   - Option to post a cover picture for posts.'
-  - View users who liked the posts.
+  - Individual user profiles.
+  - View users who liked the posts and navigate to user profiles from there.
   - option for nested comments.(replies to reply).
   - Dedicated Post page which lists all the posts from all the users ordered from latest.
 
