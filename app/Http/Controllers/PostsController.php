@@ -11,7 +11,7 @@ class PostsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth',['except'=>['index','show']]);
+        $this->middleware('auth',['except'=>['index','show','profile']]);
     }
 
     /**
@@ -24,7 +24,10 @@ class PostsController extends Controller
         $posts =  Post::orderBy('created_at','desc')->get();
         return view('posts.index',compact('posts'));
     }
-
+    public function profile($user_id)
+    {
+        return view('users.profile',compact('user_id'));
+    }
     /**
      * Show the form for creating a new resource.
      *

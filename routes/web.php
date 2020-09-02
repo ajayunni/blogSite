@@ -18,6 +18,7 @@ Route::get('/about', 'PagesController@about');
 
 Auth::routes();
 
+Route::get('/profile/{user_id}',array('uses' => 'PostsController@profile', 'as'=>'profile'));
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('post', array('uses' => 'CommentsController@store'));
 Route::post('posts/{id}', array('uses' => 'LikesController@store'));

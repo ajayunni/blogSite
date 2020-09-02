@@ -29,21 +29,23 @@
                     @else
                         {{Form::button('<i style="color:grey;" class="fa fa-3x fa-heart" aria-hidden="true" id="heart"></i>',array('class'=>'btn ', 'type'=>'button'))}}
                     @endif
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            @foreach($post->likes as $like)
-                                <a class="dropdown-item">{{$like->user_name}}</a>
-                            @endforeach
+                    @if($post->howManyLikes()>0)
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                @foreach($post->likes as $like)
+                                    <a class="dropdown-item" href="{!! route('profile', ['user_id'=>$like->user_id]) !!}">{{$like->user_name}}</a>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
                 <!-- Author -->
                 <p class="lead">
                     by
-                    <a href="#">{{$post->user->name}}</a>
+                    <a href="{!! route('profile', ['user_id'=>$post->user->id]) !!}">{{$post->user->name}}</a>
                 </p>
                 <!-- Date/Time -->
                 <p>Posted on {{$post->created_at->format('d M,Y')}}</p>

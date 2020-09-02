@@ -162,7 +162,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598113590075</updated>
       <workItem from="1598113591141" duration="69697000" />
-      <workItem from="1598636483355" duration="1076000" />
+      <workItem from="1598636483355" duration="8315000" />
     </task>
     <servers />
   </component>
@@ -198,19 +198,21 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="393" y="183" key="NewPhpClassDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598172585855" />
-    <state x="2159" y="456" key="NewPhpFileDialog" timestamp="1598439878994">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="2159" y="469" key="NewPhpFileDialog" timestamp="1598689345775">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598192849306" />
     <state x="2159" y="456" key="NewPhpFileDialog/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1598439878994" />
+    <state x="2159" y="469" key="NewPhpFileDialog/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1598689345775" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1598114614524">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598114614524" />
-    <state x="2065" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1598518073853">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="2065" y="259" width="670" height="662" key="search.everywhere.popup" timestamp="1598692984402">
+      <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2065" y="241" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1598518073853" />
+    <state x="2065" y="259" width="670" height="662" key="search.everywhere.popup/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1598692984402" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -227,7 +229,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/routes/web.php</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

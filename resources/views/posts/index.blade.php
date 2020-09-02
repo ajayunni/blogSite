@@ -14,7 +14,7 @@
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">{{$post->title}}</h4>
-                        <p class="text-right">By {{$post->user->name}}</p>
+                        <p class="text-right"><a href="{!! route('profile', ['user_id'=>$post->user_id]) !!}">By {{$post->user->name}}</a></p>
                         <p>{{substr($post->body,0,50)}}.....<a href="posts/{{$post->id}}">Read more</a></p>
                         <ul class="list-inline list-unstyled">
                             <li><span><i style="color: grey;" class="glyphicon glyphicon-calendar"></i> {{$post->created_at->diffForHumans()}}</span></li>
