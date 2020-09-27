@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use App\Post;
 use Illuminate\Http\Request;
+use Facades\App\Repository\posts;
 use Illuminate\Support\Facades\Storage;
 use function Sodium\compare;
 
@@ -21,7 +22,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts =  Post::orderBy('created_at','desc')->get();
+        $posts = posts::all('created_at');
+        $posts =  Post::orderBy('created_at','desc')->paginate(10);
         return view('posts.index',compact('posts'));
     }
     public function profile($user_id)
@@ -156,4 +158,5 @@ class PostsController extends Controller
         $post->delete();
         return redirect('/posts')->with('success','Post deleted!');
     }
+
 }

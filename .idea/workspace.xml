@@ -7,9 +7,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -136,7 +145,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -153,7 +162,10 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7495c93e-6a72-4932-9cfc-ccc33bfbd881" name="Default Changelist" comment="" />
@@ -163,44 +175,76 @@
       <updated>1598113590075</updated>
       <workItem from="1598113591141" duration="69697000" />
       <workItem from="1598636483355" duration="8315000" />
+      <workItem from="1599885980116" duration="415000" />
+      <workItem from="1599886464714" duration="17418000" />
+      <workItem from="1600401517764" duration="1633000" />
+      <workItem from="1600502155766" duration="471000" />
+      <workItem from="1600505730444" duration="27257000" />
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2138" y="302" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598518343529">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="349" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599930421695">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="349" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1599930421695" />
+    <state x="190" y="64" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1599909566406">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="190" y="64" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1599909566406" />
+    <state x="465" y="190" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599929734351">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="465" y="190" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1599929734351" />
     <state x="2138" y="302" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1598518343529" />
-    <state width="1878" height="304" key="GridCell.Tab.0.bottom" timestamp="1598283391080">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state x="2564" y="151" key="#phpunit.xml" timestamp="1600581687137">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2564" y="151" key="#phpunit.xml/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600581687137" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1599886396932">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599886396932" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598113629606" />
     <state width="1878" height="304" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1598283391080" />
-    <state width="1878" height="304" key="GridCell.Tab.0.center" timestamp="1598283391078">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1599886396932">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599886396932" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598113629604" />
     <state width="1878" height="304" key="GridCell.Tab.0.center/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1598283391078" />
-    <state width="1878" height="304" key="GridCell.Tab.0.left" timestamp="1598283391077">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1599886396932">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599886396932" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598113629603" />
     <state width="1878" height="304" key="GridCell.Tab.0.left/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1598283391077" />
-    <state width="1878" height="304" key="GridCell.Tab.0.right" timestamp="1598283391079">
-      <screen x="1440" y="0" width="1920" height="1080" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1599886396932">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599886396932" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598113629605" />
     <state width="1878" height="304" key="GridCell.Tab.0.right/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1598283391079" />
     <state x="393" y="183" key="NewPhpClassDialog" timestamp="1598172585855">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="393" y="183" key="NewPhpClassDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598172585855" />
-    <state x="2159" y="469" key="NewPhpFileDialog" timestamp="1598689345775">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state x="479" y="287" key="NewPhpFileDialog" timestamp="1599908643148">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="479" y="287" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1599908643148" />
     <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598192849306" />
     <state x="2159" y="456" key="NewPhpFileDialog/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1598439878994" />
     <state x="2159" y="469" key="NewPhpFileDialog/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1598689345775" />
@@ -208,9 +252,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900/1440.0.1920.1080@0.0.1440.900" timestamp="1598114614524" />
-    <state x="2065" y="259" width="670" height="662" key="search.everywhere.popup" timestamp="1598692984402">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state x="2536" y="240" key="run.anything.popup" timestamp="1601099449117">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2536" y="240" key="run.anything.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601099449117" />
+    <state x="2545" y="232" width="672" height="652" key="search.everywhere.popup" timestamp="1600608111627">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2545" y="232" width="672" height="652" key="search.everywhere.popup/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600608111627" />
     <state x="2065" y="241" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1598518073853" />
     <state x="2065" y="259" width="670" height="662" key="search.everywhere.popup/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1598692984402" />
   </component>
@@ -235,6 +284,16 @@
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/comments/replies.blade.php</url>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Post.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/UserController.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

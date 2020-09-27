@@ -40,15 +40,25 @@ class LikesController extends Controller
      */
     public function store(Request $request)
     {
+        $liked=false;
         foreach (Post::find($request->input('post_id'))->likes as $like){
-            if($like->user_id==auth()->user()->id)return redirect('/posts/'.$request->input('post_id'))->with('error','already liked');
+            if($like->user_id==auth()->user()->id){
+                $liked=true;
+                $id = $like->id;
+                break;
+            }
+        }
+        if ($liked){
+            $like = like::find($id);
+            $like->delete();
+            return redirect('/posts/'.$request->input('post_id'))->with('success','disliked ☹');
         }
         $like = new like();
         $like->post_id = $request->input('post_id');
         $like->user_id = auth()->user()->id;
         $like->user_name = $request->input('user_name');
         $like->save();
-        return redirect('/posts/'.$request->input('post_id'))->with('success','😍');
+        return redirect('/posts/'.$request->input('post_id'))->with('success','liked 😍');
     }
 
     /**

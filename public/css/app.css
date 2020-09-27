@@ -6,9 +6,6 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-#heart:hover {
-    background: red;
-}
 
 :root {
   --blue: #3490dc;
@@ -4523,7 +4520,7 @@ input[type=button].btn-block {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 1.3rem; !important;
+  padding-top: 0.32rem;
   padding-bottom: 0.32rem;
   margin-right: 1rem;
   font-size: 1.125rem;

@@ -55,7 +55,7 @@
                 @endif
                 <hr>
                 <p>
-                    {{$post->body}}
+                    {!! $post->body !!}
                 </p>
                 <hr>
                 @if(!Auth::guest()&&Auth::user()->id==$post->user_id)
@@ -74,7 +74,7 @@
                         <div class="card-body">
                             {!! Form::open(['action' => ['CommentsController@store'],'method'=>'POST']) !!}
                                 <div class="form-group">
-                                    {{Form::textarea('body','',['class'=>'form-control','placeholder'=>'Write something insightful..'])}}
+                                    {{Form::textarea('body','',['class'=>'comment form-control','placeholder'=>'Write something insightful..'])}}
                                 </div>
                             {!! Form::hidden('post_id', $post->id) !!}
                             {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
@@ -91,9 +91,17 @@
                         @continue;
                     @endif
                     <div class="media mb-4">
-                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                        @php
+                            $theCommenter = \App\User::find($comment->user_id)
+                        @endphp
+                        @if($theCommenter->profile_image!="")
+                            <img style="height: 50px;width: 50px;" class="d-flex mr-3 rounded-circle" src="/storage/profile_images/{{$theCommenter->profile_image}}" alt="">
+                        @else
+                            <img class="d-flex mr-3 rounded-circle" src="http://placekitten.com/50/50" alt="">
+                        @endif
+
                         <div class="media-body">
-                            <h5 class="mt-0">{{$comment->user_name}}</h5>
+                            <h5 class="mt-0"><a href="{!! route('profile', ['user_id'=>$comment->user_id]) !!}">{{$comment->user_name}}</a></h5>
                             {{$comment->body}}
                             <div class="pull-right">
                                 {{$comment->created_at->diffForHumans() }}

@@ -3,6 +3,8 @@
 namespace App;
 
 use App\User;
+use \Cache;
+use Facades\App\Repository\posts;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -25,5 +27,19 @@ class Post extends Model
     public function likedByUser()
     {
         return $this->likes()->where('user_id', Auth::user()->id);
+    }
+    //For clearing cache and see changes right away!
+    protected static function boot()
+    {
+        parent::boot();
+        static::saving(function() {
+            Cache::forget(posts::getCacheKey("all.created_at"));
+        });
+        static::deleting(function() {
+            Cache::forget(posts::getCacheKey("all.created_at"));
+        });
+        static::updating(function() {
+            Cache::forget(posts::getCacheKey("all.created_at"));
+        });
     }
 }
