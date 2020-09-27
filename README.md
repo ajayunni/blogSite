@@ -1,15 +1,40 @@
 # Laravel Blog - Based on Laravel v5.6.5
 This is a sample blog based on Laravel 5.6 framework and Bootstrap 4 for me learning purpose.
 
+# Quick Set-up
+
+##### Install Dependencies
+    composer install
+
+##### Run Migrations
+    php artisan migrate
+
+##### Add virtual host if using Apache
+
+##### If you get an error about an encryption key
+    php artisan key:generate
+
+##### Install JS Dependencies
+    npm install
+
+##### Watch Files
+    npm run watch
+    
 # Features!
   - Login and register.
   - Personal Dashboard page.
   - Like and Comment on posts.
   - Option to post a cover picture for posts.'
+  ##### update 13th Sept, 2020
   - Individual user profiles.
   - View users who liked the posts and navigate to user profiles from there.
-  - Option for nested comments.(replies to reply).
+  - Enabled nested comments.
   - Dedicated Post page which lists all the posts from all the users ordered from latest.
+  ##### update 27th Sept, 2020
+  - Integrated TinyMCE text editor to give users more options while creating posts.
+  - Integrated Imgur api. Users now can directly upload images from local to imgur and get the link all with click of a button.
+  - Introduced profile pictures for each user. Navigate to dashboard to set/change.
+  - User Dashboard gets an overhaul.
 
 
 # Tech
@@ -31,4 +56,4 @@ And of course blog project itself is open source with a public repository on Git
 
 ![Post Area](/screenshots/post_page2.png)
 
-Will be regularly updated!
+**Will be regularly updated!**
