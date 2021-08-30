@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddProfilePictureToUsers extends Migration
+class CreateDislikeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddProfilePictureToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('profile_image')->nullable();
+        Schema::create('dislike', function (Blueprint $table) {
+            $table->id();
+            $table->integer('post_id');
+            $table->string('user_name');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddProfilePictureToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('profile_image');
-        });
+        Schema::dropIfExists('dislike');
     }
 }

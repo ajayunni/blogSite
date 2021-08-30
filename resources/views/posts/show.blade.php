@@ -5,42 +5,86 @@
             <div class="col-lg-12">
                 <!-- Title -->
                 <div style="display: flex; flex-direction: row;">
-                    <span><h1 class="mt-"4>{{$post->title}}</h1></span>
+                    <span><h1 class="mt-" 4>{{$post->title}}</h1></span>
                     {!! $liked=false !!}
+                    {!! $disliked=false !!}
                     @if(!Auth::guest())
                         @foreach($post->likes as $like)
                             @if($like->user_id==Auth::user()->id)
                                 @php
-                                  $liked=true
+                                    $liked=true
                                 @endphp
                             @endif
                         @endforeach
                     @endif
                     @if(!Auth::guest())
-                    <span>
-                        {!! Form::open(['action' => ['LikesController@store',$post->id],'method'=>'POST']) !!}
-                        @if($liked){{Form::button('<i style="color:red;" class="fa fa-3x fa-heart" aria-hidden="true" id="heart"></i>',array('class'=>'btn ', 'type'=>'submit'))}}
-                        @else{{Form::button('<i style="color:black;" class="fa fa-3x fa-heart" aria-hidden="true" id="heart"></i>',array('class'=>'btn ', 'type'=>'submit'))}}
-                        @endif
-                        {!! Form::hidden('post_id', $post->id) !!}
-                        {!! Form::hidden('user_name', Auth::user()->name) !!}
-                        {!! Form::close() !!}
+                        @foreach($post->dislikes as $dislike)
+                            @if($dislike->user_id==Auth::user()->id)
+                                @php
+                                    $disliked=true
+                                @endphp
+                            @endif
+                        @endforeach
+                    @endif
+                    @if(!Auth::guest())
+                        <span>
+                        <div style="display: flex">
+                            <div class="raise" style="display: flex;">
+                                {!! Form::open(['action' => ['LikesController@store',$post->id],'method'=>'POST']) !!}
+                                @if($liked){{Form::button('<i style="color:red;" class="fa fa-3x fa-heart" aria-hidden="true" id="heart"></i>',array('class'=>'btn ', 'type'=>'submit'))}}
+                                @else{{Form::button('<i style="color:black;" class="fa fa-3x fa-heart" aria-hidden="true" id="heart"></i>',array('class'=>'btn ', 'type'=>'submit'))}}
+                                @endif
+                                {!! Form::hidden('post_id', $post->id) !!}
+                                {!! Form::hidden('isLike',true) !!}
+                                {!! Form::hidden('user_name', Auth::user()->name) !!}
+                                {!! Form::close() !!}
+                                @if($post->howManyLikes()>0)
+                                    <div class="btn-group" style="width: 100%;">
+                                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        @foreach($post->likes as $like)
+                                            <a class="dropdown-item"
+                                               href="{!! route('profile', ['user_id'=>$like->user_id]) !!}">{{$like->user_name}}</a>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                @endif
+                            </div>
+                             <div class="raise" style="display: flex;">
+                                {!! Form::open(['action' => ['LikesController@store',$post->id],'method'=>'POST']) !!}
+                                 @if($disliked){{Form::button('<i style="color:red;" class="fa fa-3x fa-heart-broken" aria-hidden="true" id="heart"></i>',array('class'=>'btn ', 'type'=>'submit'))}}
+                                 @else{{Form::button('<i style="color:black;" class="fa fa-3x fa-heart-broken" aria-hidden="true" id="heart"></i>',array('class'=>'btn ', 'type'=>'submit'))}}
+                                 @endif
+                                 {!! Form::hidden('post_id', $post->id) !!}
+                                 {!! Form::hidden('isLike',false) !!}
+                                 {!! Form::hidden('user_name', Auth::user()->name) !!}
+                                 {!! Form::close() !!}
+                                 @if($post->howManyDisLikes()>0)
+                                     <div class="btn-group">
+                                        <button type="button"
+                                                class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            @foreach($post->dislikes as $dislike)
+                                                <a class="dropdown-item"
+                                                   href="{!! route('profile', ['user_id'=>$dislike->user_id]) !!}">{{$dislike->user_name}}</a>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                 @endif
+                             </div>
+                        </div>
                     </span>
                     @else
                         {{Form::button('<i style="color:grey;" class="fa fa-3x fa-heart" aria-hidden="true" id="heart"></i>',array('class'=>'btn ', 'type'=>'button'))}}
+                        {{Form::button('<i style="color:grey;" class="fa fa-3x fa-heart-broken" aria-hidden="true" id="heart"></i>',array('class'=>'btn ', 'type'=>'button'))}}
                     @endif
-                    @if($post->howManyLikes()>0)
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                @foreach($post->likes as $like)
-                                    <a class="dropdown-item" href="{!! route('profile', ['user_id'=>$like->user_id]) !!}">{{$like->user_name}}</a>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endif
+
                 </div>
                 <!-- Author -->
                 <p class="lead">
@@ -49,9 +93,10 @@
                 </p>
                 <!-- Date/Time -->
                 <p>Posted on {{$post->created_at->format('d M,Y')}}</p>
-                @if($post->cover_image!=null)
-                    <!-- Preview Image -->
-                    <img style="display: block; margin-left: auto; margin-right: auto;" class="img-fluid rounded" src="/storage/cover_images/{{$post->cover_image}}" alt="">
+            @if($post->cover_image!=null)
+                <!-- Preview Image -->
+                    <img style="display: block; margin-left: auto; margin-right: auto;" class="img-fluid rounded"
+                         src="/storage/cover_images/{{$post->cover_image}}" alt="">
                 @endif
                 <hr>
                 <p>
@@ -68,14 +113,14 @@
                     <hr>
                 @endif
                 @if(!Auth::guest())
-                    <!-- Comments Form -->
+                <!-- Comments Form -->
                     <div class="card my-4">
                         <h5 class="card-header">Leave a Comment:</h5>
                         <div class="card-body">
                             {!! Form::open(['action' => ['CommentsController@store'],'method'=>'POST']) !!}
-                                <div class="form-group">
-                                    {{Form::textarea('body','',['class'=>'comment form-control','placeholder'=>'Write something insightful..'])}}
-                                </div>
+                            <div class="form-group">
+                                {{Form::textarea('body','',['class'=>'comment form-control','placeholder'=>'Write something insightful..'])}}
+                            </div>
                             {!! Form::hidden('post_id', $post->id) !!}
                             {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
                             {!! Form::close() !!}
@@ -85,7 +130,7 @@
                     Please <a href="{{ route('login')}}">LOGIN</a> to drop a comment.
                     <hr>
                 @endif
-                <!-- Comment with nested comments -->
+            <!-- Comment with nested comments -->
                 @foreach ($post->comments as $comment)
                     @if($comment->parent_id!=null)
                         @continue;
@@ -95,13 +140,16 @@
                             $theCommenter = \App\User::find($comment->user_id)
                         @endphp
                         @if($theCommenter->profile_image!="")
-                            <img style="height: 50px;width: 50px;" class="d-flex mr-3 rounded-circle" src="/storage/profile_images/{{$theCommenter->profile_image}}" alt="">
+                            <img style="height: 50px;width: 50px;" class="d-flex mr-3 rounded-circle"
+                                 src="/storage/profile_images/{{$theCommenter->profile_image}}" alt="">
                         @else
                             <img class="d-flex mr-3 rounded-circle" src="http://placekitten.com/50/50" alt="">
                         @endif
 
                         <div class="media-body">
-                            <h5 class="mt-0"><a href="{!! route('profile', ['user_id'=>$comment->user_id]) !!}">{{$comment->user_name}}</a></h5>
+                            <h5 class="mt-0"><a
+                                    href="{!! route('profile', ['user_id'=>$comment->user_id]) !!}">{{$comment->user_name}}</a>
+                            </h5>
                             {{$comment->body}}
                             <div class="pull-right">
                                 {{$comment->created_at->diffForHumans() }}
@@ -129,4 +177,16 @@
         </div>
     </div>
     <hr>
+    <style>
+        .raise:hover,
+        .raise:focus {
+            box-shadow: 5px 5px white,
+            4px 4px white,
+            3px 3px white,
+            2px 2px white,
+            1px 1px white,
+            5px 5px 5px black;
+            border: 1px solid white;
+        }
+    </style>
 @endsection

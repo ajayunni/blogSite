@@ -12,10 +12,12 @@
         {{Form::textarea('body',$post->body,['id'=>'text-box','class'=>'form-control','placeholder'=>'Write something insightful..'])}}
     </div>
     <div class="form-group">
+        {{Form::label('cover_image','Cover Image')}}
+        {{Form::file('cover_image',['class'=>"cover_image"])}}
+    </div>
+    <div class="form-group">
         {{Form::label('image','Add an image')}}
-        <input type="file" class="imgur" accept="image/*" data-max-size="5000" />
-        {{Form::label('cover_image','Add Cover Image')}}
-        {{Form::file('cover_image')}}
+        {{Form::file('image',['class'=>"post_image"])}}
     </div>
     {{Form::hidden('_method','PUT')}}
     {{Form::submit('Submit',['class'=>'btn btn-primary'])}}

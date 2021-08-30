@@ -2,9 +2,9 @@
     $('input[type=file]').on('change', function () {
         var $files = $(this).get(0).files;
         if ($files.length) {
-            // Reject big files
+            // Reject big fil   es
             if ($files[0].size > $(this).data('max-size') * 1024) {
-                tinymce.get('text-box').setContent( tinymce.get('text-box').getContent() +' select a smaller file');
+                tinymce.get('text-box').setContent(tinymce.get('text-box').getContent() + ' select a smaller file');
                 return false;
             }
             // Begin file upload
@@ -31,8 +31,10 @@
             settings.data = formData;
             // Response contains stringified JSON
             // Image URL available at response.data.link
+            $action = $(this).attr('name')
             $.ajax(settings).done(function (response) {
-                tinymce.get('text-box').setContent( tinymce.get('text-box').getContent() +' '+JSON.parse(response).data.link);
+                if ($action !== "cover_image")
+                    tinymce.get('text-box').setContent(tinymce.get('text-box').getContent() + ' ' + JSON.parse(response).data.link);
             });
         }
     });

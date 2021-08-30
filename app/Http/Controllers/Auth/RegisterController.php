@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\constants\Actions;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\HistoryController;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -44,7 +46,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -59,15 +61,19 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        (new HistoryController())->store($user->id, Actions::ACTION_USER_REG, $user->id);
+
+        return $user;
     }
 }

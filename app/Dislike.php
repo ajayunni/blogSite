@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class like extends Model
+class Dislike extends Model
 {
     public function post()
     {
